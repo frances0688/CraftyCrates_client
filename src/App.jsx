@@ -2,7 +2,8 @@ import './App.scss'
 import Box from './components/Box/Box'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import Item from './components/Item/Item'
+import Product from './components/Product/Product'
+import {ProductProvider} from './context/ProductContext/ProductState'
 
 function App() {
 
@@ -10,8 +11,10 @@ function App() {
 
     <div>
       <Header/>
-      <Box/>
-      <Item/>
+      <ProductProvider>
+        <Box/>
+        <Product/>
+      </ProductProvider>
       <Footer/>
     </div>
 
