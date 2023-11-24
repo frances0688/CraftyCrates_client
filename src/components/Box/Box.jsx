@@ -13,7 +13,7 @@ const Box = () => {
                 return (
                     <div key={box.id}>
                         <h2>{box.size}</h2>
-                        <h3>{box.price}</h3>
+                        <h3>$ {box.price}</h3>
                         <p>{box.description}</p>
                     </div>
                 );
