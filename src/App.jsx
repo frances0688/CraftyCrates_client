@@ -3,6 +3,7 @@ import Box from './components/Box/Box'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import Product from './components/Product/Product'
+import {BoxProvider} from './context/BoxContext/BoxState'
 import {ProductProvider} from './context/ProductContext/ProductState'
 
 function App() {
@@ -11,10 +12,12 @@ function App() {
 
     <div>
       <Header/>
-      <ProductProvider>
+      <BoxProvider>
         <Box/>
-        <Product/>
-      </ProductProvider>
+        <ProductProvider>
+          <Product/>
+        </ProductProvider>
+      </BoxProvider>
       <Footer/>
     </div>
 
