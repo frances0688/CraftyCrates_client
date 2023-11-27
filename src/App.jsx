@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.scss'
 import Box from './components/Box/Box'
 import Footer from './components/Footer/Footer'
@@ -12,19 +13,19 @@ function App() {
 
   return (
 
-    <div>
+    <React.Fragment>
       <Header/>
       <ThemeProvider>
-        <Theme/>
         <BoxProvider>
-          <Box/>
           <ProductProvider>
+            <Theme/>
+            <Box/>
             <Product/>
           </ProductProvider>
         </BoxProvider>
       </ThemeProvider>
       <Footer/>
-    </div>
+    </React.Fragment>
 
   )
 }
