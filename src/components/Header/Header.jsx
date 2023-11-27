@@ -9,8 +9,7 @@ import {
     MDBNavbarToggler,
     MDBContainer,
     MDBIcon,
-    MDBCollapse,
-    MDBBtn
+    MDBCollapse
 } from 'mdb-react-ui-kit';
 
 const Header = () => {
@@ -18,10 +17,10 @@ const Header = () => {
         setOpenBasic] = useState(false);
 
     return (
-        <header>
+        <React.Fragment>
             <MDBNavbar expand='lg'>
                 <MDBContainer fluid="true">
-                    <MDBNavbarBrand href='#'>
+                    <MDBNavbarBrand href='/'>
                         <img src='/images/CraftyCratesLogo.png' height='40' alt='logo' loading='lazy'/>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler
@@ -34,36 +33,19 @@ const Header = () => {
                     <MDBCollapse navbar open={openBasic}>
                         <MDBNavbarNav right className='mr-auto mb-2 mb-lg-0'>
                             <MDBNavbarItem>
-                                <MDBNavbarLink href='#'>Hobbies</MDBNavbarLink>
+                                <MDBNavbarLink href='/themes'>Hobbies</MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
-                                <MDBNavbarLink href='#'>My Profile</MDBNavbarLink>
+                                <MDBNavbarLink href='/profile'>Profile</MDBNavbarLink>
                             </MDBNavbarItem>
                             <MDBNavbarItem>
-                                <MDBNavbarLink href='#'>About</MDBNavbarLink>
+                                <MDBNavbarLink href='/contact'>Contact Us</MDBNavbarLink>
                             </MDBNavbarItem>
                         </MDBNavbarNav>
                     </MDBCollapse>
                 </MDBContainer>
             </MDBNavbar>
-
-            <div
-                className='p-5 text-center bg-image'
-                style={{
-                backgroundImage: "url('../../../public/images/CraftyCrates.png')",
-                height: '60vh'
-            }}>
-                <div className='mask'>
-                    <div className='d-flex h-100'>
-                        <div className='text-white'>
-                            <MDBBtn btn tag="a" size="lg">
-                                Order Now
-                            </MDBBtn>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        </React.Fragment>
     );
 }
 
