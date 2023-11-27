@@ -7,7 +7,7 @@ const Home = () => {
         <div
             className='p-5 text-center bg-image'
             style={{
-            backgroundImage: "url('../../../public/images/CraftyCrates.png')",
+            backgroundImage: "url('/images/CraftyCrates.png')",
             height: '60vh'
         }}>
             <div className='mask'>

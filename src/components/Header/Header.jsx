@@ -21,7 +21,7 @@ const Header = () => {
             <MDBNavbar expand='lg'>
                 <MDBContainer fluid="true">
                     <MDBNavbarBrand href='/'>
-                        <img src='/images/CraftyCratesLogo.png' height='40' alt='logo' loading='lazy'/>
+                        <img src='./images/CraftyCratesLogo.png' height='40' alt='logo' loading='lazy'/>
                     </MDBNavbarBrand>
                     <MDBNavbarToggler
                         onClick={() => setOpenBasic(!openBasic)}
