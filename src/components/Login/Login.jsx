@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext} from 'react'
 import {MDBBtn, MDBIcon, MDBInput, MDBCheckbox} from 'mdb-react-ui-kit';
 import {UserContext} from '../../context/UserContext/UserState';
 import {useNavigate} from 'react-router-dom';
@@ -14,7 +14,6 @@ const Login = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log("success", loginForm)
         login();
         setTimeout(() => {
             navigate("/profile");

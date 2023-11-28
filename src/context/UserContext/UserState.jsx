@@ -11,6 +11,12 @@ const initialState = {
     loginForm: {
         email: '',
         password: ''
+    },
+    registerForm: {
+        user_name: '',
+        shipping_address: '',
+        email: '',
+        password: ''
     }
 };
 
@@ -47,14 +53,39 @@ export const UserProvider = ({children}) => {
         });
     };
 
+    const register = async() => {
+        try {
+            const res = await axios.post(API_URL, state.registerForm);
+            console.log('user', state.registerForm);
+            dispatch({type: 'CREATE', payload: res.data});
+            // login();
+        } catch (error) {
+            console.error(error);
+        }
+
+    };
+
+    const setRegisterFormValue = (name, value) => {
+        dispatch({
+            type: 'SET_REGISTER_FORM_VALUE',
+            payload: {
+                name,
+                value
+            }
+        });
+    };
+
     return (
         <UserContext.Provider
             value={{
             token: state.token,
             user: state.user,
             loginForm: state.loginForm,
+            registerForm: state.registerForm,
             login,
-            setLoginFormValue
+            setLoginFormValue,
+            register,
+            setRegisterFormValue
         }}>
             {children}
         </UserContext.Provider>

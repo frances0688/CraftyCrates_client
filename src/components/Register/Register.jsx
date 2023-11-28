@@ -1,97 +1,107 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import {MDBBtn, MDBIcon, MDBInput, MDBCheckbox} from 'mdb-react-ui-kit';
+import {UserContext} from '../../context/UserContext/UserState';
 
 const Register = () => {
-    const handleSubmit = (e, values) => {
-        e.preventDefault()
-        console.log("success:", values);
-    }
+    const {registerForm, setRegisterFormValue, register} = useContext(UserContext);
+
+    const handleInputChange = (e) => {
+        const {name, value} = e.target;
+        setRegisterFormValue(name, value);
+    };
+
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log("success", registerForm)
+        register();
+    };
+
     return (
         <React.Fragment>
-            <div className="text-center mb-3">
-                <p>Sign in with:</p>
+            <form onSubmit={onSubmit}>
+                <div className="text-center mb-3">
+                    <p>Sign in with:</p>
 
-                <div
-                    className='d-flex justify-content-between mx-auto'
-                    style={{
-                    width: '40%'
-                }}>
-                    <MDBBtn
-                        tag='a'
-                        color='none'
-                        className='m-1'
+                    <div
+                        className='d-flex justify-content-between mx-auto'
                         style={{
-                        color: '#1266f1'
+                        width: '40%'
                     }}>
-                        <MDBIcon fab icon='facebook-f' size="sm"/>
-                    </MDBBtn>
+                        <MDBBtn
+                            tag='a'
+                            color='none'
+                            className='m-1'
+                            style={{
+                            color: '#1266f1'
+                        }}>
+                            <MDBIcon fab icon='facebook-f' size="sm"/>
+                        </MDBBtn>
 
-                    <MDBBtn
-                        tag='a'
-                        color='none'
-                        className='m-1'
-                        style={{
-                        color: '#1266f1'
-                    }}>
-                        <MDBIcon fab icon='twitter' size="sm"/>
-                    </MDBBtn>
+                        <MDBBtn
+                            tag='a'
+                            color='none'
+                            className='m-1'
+                            style={{
+                            color: '#1266f1'
+                        }}>
+                            <MDBIcon fab icon='twitter' size="sm"/>
+                        </MDBBtn>
 
-                    <MDBBtn
-                        tag='a'
-                        color='none'
-                        className='m-1'
-                        style={{
-                        color: '#1266f1'
-                    }}>
-                        <MDBIcon fab icon='google' size="sm"/>
-                    </MDBBtn>
+                        <MDBBtn
+                            tag='a'
+                            color='none'
+                            className='m-1'
+                            style={{
+                            color: '#1266f1'
+                        }}>
+                            <MDBIcon fab icon='google' size="sm"/>
+                        </MDBBtn>
 
-                    <MDBBtn
-                        tag='a'
-                        color='none'
-                        className='m-1'
-                        style={{
-                        color: '#1266f1'
-                    }}>
-                        <MDBIcon fab icon='github' size="sm"/>
-                    </MDBBtn>
+                        <MDBBtn
+                            tag='a'
+                            color='none'
+                            className='m-1'
+                            style={{
+                            color: '#1266f1'
+                        }}>
+                            <MDBIcon fab icon='github' size="sm"/>
+                        </MDBBtn>
+                    </div>
+
+                    <p className="text-center mt-3">or:</p>
                 </div>
-
-                <p className="text-center mt-3">or:</p>
-            </div>
-            <form>
                 <MDBInput
                     wrapperClass='mb-4'
                     label='Name'
-                    id='user_name'
                     type='text'
                     name='user_name'
-                    defaultValue=""
-                    onChange=""/>
+                    value={registerForm.user_name}
+                    onChange={handleInputChange}
+                    required/>
                 <MDBInput
                     wrapperClass='mb-4'
                     label='Address'
-                    id='address'
                     type='text'
-                    name='address'
-                    defaultValue=""
-                    onChange=""/>
+                    name='shipping_address'
+                    value={registerForm.shipping_address}
+                    onChange={handleInputChange}
+                    required/>
                 <MDBInput
                     wrapperClass='mb-4'
                     label='Email'
-                    id='email'
                     type='email'
                     name='email'
-                    defaultValue=""
-                    onChange=""/>
+                    value={registerForm.email}
+                    onChange={handleInputChange}
+                    required/>
                 <MDBInput
                     wrapperClass='mb-4'
                     label='Password'
-                    id='password'
                     type='password'
                     name='password'
-                    defaultValue=""
-                    onChange=""/>
+                    value={registerForm.password}
+                    onChange={handleInputChange}
+                    required/>
 
                 <div className='d-flex justify-content-center mb-4'>
                     <MDBCheckbox
@@ -100,7 +110,7 @@ const Register = () => {
                         label='I have read and agree to the terms'/>
                 </div>
 
-                <MDBBtn className="mb-4 w-100" type='submit' onClick={handleSubmit}>Sign up</MDBBtn>
+                <MDBBtn className="mb-4 w-100" type='submit'>Sign up</MDBBtn>
             </form>
         </React.Fragment>
     )
