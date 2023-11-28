@@ -13,19 +13,17 @@ import {
 function LoginRegister() {
 
     const [justifyActive,
-        setJustifyActive] = useState('tab1');;
+        setJustifyActive] = useState('tab1');
 
     const handleJustifyClick = (value) => {
         if (value === justifyActive) {
             return;
         }
-
         setJustifyActive(value);
     };
 
     return (
         <MDBContainer className="p-3 my-5 d-flex flex-column w-50">
-
             <MDBTabs pills justify className='mb-3 d-flex flex-row justify-content-between'>
                 <MDBTabsItem>
                     <MDBTabsLink
