@@ -1,11 +1,10 @@
-import React from 'react';
 import './Footer.scss';
 import {Link} from 'react-router-dom';
 import {MDBFooter, MDBIcon} from 'mdb-react-ui-kit';
 
 const Footer = () => {
     return (
-        <MDBFooter light className='text-center fixed-bottom' bgColor='light'>
+        <MDBFooter className='text-center fixed-bottom' bgColor='light'>
 
             <section
                 className='d-sm-flex  justify-content-lg-between text-md-center text-sm-center p-4'>
@@ -14,7 +13,7 @@ const Footer = () => {
                     Special Requests or Questions? {' '}
                     <Link
                         className='text-dark'
-                        to='/contact-us'
+                        to='/contact'
                         style={{
                         textDecoration: 'underline'
                     }}>
@@ -39,7 +38,7 @@ const Footer = () => {
                 Developed with {' '}
                 <span id='heart'>&hearts;</span>
                 {' '}
-                by:{' '}
+                by {' '}
                 <a
                     className='text-dark'
                     target="_blank"
