@@ -38,6 +38,18 @@ const users = (state, action) => {
 					[action.payload.name]: action.payload.value,
 				},
 			};
+		case "GET_INFO":
+			return {
+				...state,
+				user: action.payload,
+			};
+		case "LOGOUT":
+			return {
+				...state,
+				token: null,
+				user: null,
+			};
+
 		default:
 			return state;
 	}

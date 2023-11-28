@@ -104,10 +104,7 @@ const Register = () => {
                     required/>
 
                 <div className='d-flex justify-content-center mb-4'>
-                    <MDBCheckbox
-                        name='flexCheck'
-                        id='flexCheckDefault'
-                        label='I have read and agree to the terms'/>
+                    <MDBCheckbox name='flexCheck' label='I have read and agree to the terms'/>
                 </div>
 
                 <MDBBtn className="mb-4 w-100" type='submit'>Sign up</MDBBtn>

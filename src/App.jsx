@@ -12,6 +12,7 @@ import {BoxProvider} from './context/BoxContext/BoxState'
 import {ProductProvider} from './context/ProductContext/ProductState'
 import {ThemeProvider} from './context/ThemeContext/ThemeState'
 import {UserProvider} from './context/UserContext/UserState'
+import User from './components/User/User'
 
 function App() {
 
@@ -27,10 +28,10 @@ function App() {
                 <Header/>
                 <Routes>
                   <Route path="/" element={< Home />}/>
-                  <Route path="/users/login" element={< LoginRegister />}/>
-                  <Route path="/themes" element={< Theme />}/>
-                  <Route path="/boxes" element={< Box />}/>
-                  <Route path="/products" element={< Product />}/>
+                  <Route path="/login" element={< LoginRegister />}/>
+                  <Route path="/profile" element={< User />}/>
+                  <Route path="/crates" element={< Theme />}/>
+                  <Route path="/contact" element={< Product />}/>
                 </Routes>
                 <Footer/>
               </ProductProvider>
