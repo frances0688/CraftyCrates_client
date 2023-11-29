@@ -1,0 +1,11 @@
+@import '../../colors.scss';
+
+.gradient-custom {
+    background: $blue;
+    background: -webkit-linear-gradient(to right bottom, $blue, $green);
+    background: linear-gradient(to right bottom, $blue, $green)
+    }
+
+.fa-pen-to-square {
+    color: $pink;
+}

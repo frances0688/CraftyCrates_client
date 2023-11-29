@@ -13,7 +13,7 @@ const Home = () => {
             <div className='mask'>
                 <div className='d-flex h-100'>
                     <div className='text-white'>
-                        <MDBBtn id='homeBtn' tag="a" size="lg">
+                        <MDBBtn id='homeBtn' tag="a" size="lg" href='/crates'>
                             Order Now
                         </MDBBtn>
                     </div>
