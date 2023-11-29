@@ -20,27 +20,26 @@ const User = () => {
         getUser();
     }, []);
     return (
-        <MDBContainer className='vh100'>
+        <MDBContainer id='user-profile' className='vh-50'>
             <MDBContainer className="py-5 h-100">
                 <MDBRow className="d-flex justify-content-center align-items-center h-100">
-                    <MDBCol className="col-lg-6 mb-4 mb-lg-0">
+                    <MDBCol className="col-lg-8 mb-4 mb-lg-0">
                         <MDBCard
                             className="mb-3"
                             style={{
                             borderRadius: ".5rem"
                         }}>
-
                             <MDBRow className="g-0">
                                 <div
                                     className="col-md-4 gradient-custom text-center text-white p-3 d-flex flex-column align-items-center"
                                     style={{
                                     borderTopLeftRadius: ".5rem",
-                                    borderBottomLeftRadius: ".5rem;"
+                                    borderBottomLeftRadius: ".5rem"
                                 }}>
                                     <MDBCardImage
                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
                                         alt="Avatar"
-                                        className="img-fluid m-3"
+                                        className="img-fluid m-3 rounded-circle"
                                         style={{
                                         width: "65%"
                                     }}/>
@@ -54,11 +53,11 @@ const User = () => {
                                         <MDBCardSubTitle>Information</MDBCardSubTitle>
                                         <hr className="mt-0 mb-3"></hr>
                                         <MDBRow className="pt-1">
-                                            <MDBCol className="col-12 mb-3">
+                                            <MDBCol className="col-10 mb-3">
                                                 <MDBCardText>Email</MDBCardText>
                                                 <MDBCardText className="text-muted">{user.email}</MDBCardText>
                                             </MDBCol>
-                                            <MDBCol className="col-12 mb-3">
+                                            <MDBCol className="col-10 mb-3">
                                                 <MDBCardText>Phone</MDBCardText>
                                                 <MDBCardText className="text-muted">{user.phone}</MDBCardText>
                                             </MDBCol>
