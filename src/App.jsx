@@ -13,6 +13,7 @@ import {ProductProvider} from './context/ProductContext/ProductState'
 import {ThemeProvider} from './context/ThemeContext/ThemeState'
 import {UserProvider} from './context/UserContext/UserState'
 import User from './components/User/User'
+import Contact from './components/Contact/Contact'
 
 function App() {
 
@@ -31,7 +32,7 @@ function App() {
                   <Route path="/login" element={< LoginRegister />}/>
                   <Route path="/profile" element={< User />}/>
                   <Route path="/crates" element={< Theme />}/>
-                  <Route path="/contact" element={< Product />}/>
+                  <Route path="/contact" element={< Contact />}/>
                 </Routes>
                 <Footer/>
               </ProductProvider>
