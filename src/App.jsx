@@ -3,17 +3,17 @@ import {Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 import './App.scss'
 import Home from './components/Home/Home'
 import LoginRegister from './components/LoginRegister/LoginRegister'
-import Box from './components/Box/Box'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
-import Product from './components/Product/Product'
-import Theme from './components/Theme/Theme'
 import {BoxProvider} from './context/BoxContext/BoxState'
 import {ProductProvider} from './context/ProductContext/ProductState'
 import {ThemeProvider} from './context/ThemeContext/ThemeState'
 import {UserProvider} from './context/UserContext/UserState'
 import User from './components/User/User'
 import Contact from './components/Contact/Contact'
+import OrderStepper from './components/OrderStepper/OrderStepper'
+import {OrderProvider} from './context/OrderContext/OrderState'
+import {StepProvider} from './context/StepContext/StepState'
 
 function App() {
 
@@ -23,21 +23,25 @@ function App() {
 
       <Router>
         <UserProvider>
-          <ThemeProvider>
-            <BoxProvider>
-              <ProductProvider>
-                <Header/>
-                <Routes>
-                  <Route path="/" element={< Home />}/>
-                  <Route path="/login" element={< LoginRegister />}/>
-                  <Route path="/profile" element={< User />}/>
-                  <Route path="/crates" element={< Theme />}/>
-                  <Route path="/contact" element={< Contact />}/>
-                </Routes>
-                <Footer/>
-              </ProductProvider>
-            </BoxProvider>
-          </ThemeProvider>
+          <StepProvider>
+            <OrderProvider>
+              <ThemeProvider>
+                <ProductProvider>
+                  <BoxProvider>
+                    <Header/>
+                    <Routes>
+                      <Route path="/" element={< Home />}/>
+                      <Route path="/login" element={< LoginRegister />}/>
+                      <Route path="/profile" element={< User />}/>
+                      <Route path="/crates" element={< OrderStepper />}/>
+                      <Route path="/contact" element={< Contact />}/>
+                    </Routes>
+                    <Footer/>
+                  </BoxProvider>
+                </ProductProvider>
+              </ThemeProvider>
+            </OrderProvider>
+          </StepProvider>
         </UserProvider>
       </Router>
 

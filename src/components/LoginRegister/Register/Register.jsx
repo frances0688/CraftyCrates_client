@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 import {MDBBtn, MDBIcon, MDBInput, MDBCheckbox} from 'mdb-react-ui-kit';
-import {UserContext} from '../../context/UserContext/UserState';
+import {UserContext} from '../../../context/UserContext/UserState';
 
 const Register = () => {
     const {registerForm, setRegisterFormValue, register} = useContext(UserContext);

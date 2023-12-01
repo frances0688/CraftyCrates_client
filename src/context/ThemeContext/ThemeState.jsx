@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, {createContext, useReducer} from 'react';
+import {createContext, useReducer} from 'react';
 import ThemeReducer from './ThemeReducer.js'
 
 const initialState = {

@@ -21,8 +21,6 @@ const users = (state, action) => {
 		case "CREATE":
 			return {
 				...state,
-				token: action.payload.token,
-				user: action.payload.user,
 				registerForm: {
 					user_name: "",
 					address: "",

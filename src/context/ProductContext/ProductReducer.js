@@ -1,6 +1,12 @@
-const products = (state, action) => {
+const productReducer = (state, action) => {
+	console.log(action);
 	switch (action.type) {
-		case "GET_PRODUCTS":
+		case "GET_COMBINATION_ID":
+			return {
+				...state,
+				combinationId: action.payload,
+			};
+		case "GET_PRODUCTS_IN_BOX":
 			return {
 				...state,
 				products: action.payload,
@@ -9,4 +15,5 @@ const products = (state, action) => {
 			return state;
 	}
 };
-export default products;
+
+export default productReducer;

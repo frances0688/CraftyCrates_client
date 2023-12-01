@@ -44,7 +44,7 @@ const Header = () => {
                                             <MDBNavbarLink href='/profile'>{user.user_name}</MDBNavbarLink>
                                         </MDBNavbarItem>
                                         <MDBNavbarItem>
-                                            <MDBNavbarLink href='/login' onClick={logout}>Logout</MDBNavbarLink>
+                                            <MDBNavbarLink href='/' onClick={logout}>Logout</MDBNavbarLink>
                                         </MDBNavbarItem>
                                     </React.Fragment>
                                 )
