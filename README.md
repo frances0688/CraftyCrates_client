@@ -49,8 +49,8 @@
 <img style="display: block; 
            margin-left: auto;
            margin-right: auto;" 
-      src='./assets/Postman_CreateProduct.gif'
-      alt="alt"/>
+      src='./public/images/CraftyCratesPreview.gif'
+      alt="CraftyCrates preview"/>
 
 <!-- ABOUT THE OBJECTIVES -->
 
