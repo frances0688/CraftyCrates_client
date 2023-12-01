@@ -14,6 +14,7 @@ import Contact from './components/Contact/Contact'
 import OrderStepper from './components/OrderStepper/OrderStepper'
 import {OrderProvider} from './context/OrderContext/OrderState'
 import {StepProvider} from './context/StepContext/StepState'
+import OrderDetails from './components/OrderDetails/OrderDetails'
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
                       <Route path="/" element={< Home />}/>
                       <Route path="/login" element={< LoginRegister />}/>
                       <Route path="/profile" element={< User />}/>
+                      <Route path="/orders" element={< OrderDetails />}/>
                       <Route path="/crates" element={< OrderStepper />}/>
                       <Route path="/contact" element={< Contact />}/>
                     </Routes>

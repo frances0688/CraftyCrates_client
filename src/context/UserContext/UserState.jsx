@@ -56,7 +56,6 @@ export const UserProvider = ({children}) => {
     const register = async() => {
         try {
             const res = await axios.post(API_URL, state.registerForm);
-            console.log('user', state.registerForm);
             dispatch({type: 'CREATE', payload: res.data});
             navigate('/login')
         } catch (error) {
@@ -74,13 +73,16 @@ export const UserProvider = ({children}) => {
         });
     };
     const getUser = async() => {
-        const token = JSON.parse(localStorage.getItem("token"));
+        const token = state.token;
         const res = await axios.get(API_URL + "/info", {
             headers: {
                 authorization: token
             }
         });
         dispatch({type: "GET_INFO", payload: res.data});
+        if (res.data) {
+            localStorage.setItem('user', JSON.stringify(res.data));
+        }
     };
     const logout = async() => {
         const token = JSON.parse(localStorage.getItem("token"));

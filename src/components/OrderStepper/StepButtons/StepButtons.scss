@@ -1,0 +1,25 @@
+@import '../../../colors.scss';
+
+.StepButton-d0-0-2-6,
+  .StepButton-d2-0-2-12,
+  .StepButton-d4-0-2-20 {
+    background-color: $pink !important;
+  }
+  
+  .StepButton-d0-0-2-6.active,
+  .StepButton-d2-0-2-12.active,
+  .StepButton-d4-0-2-20.active {
+    background-color: $green !important;
+  }
+
+  .StepButton-d0-0-2-6.active:hover,
+  .StepButton-d2-0-2-12.active:hover,
+  .StepButton-d4-0-2-20.active:hover {
+    background-color: $blue !important;
+  }
+
+  .StepButton-d0-0-2-6.completed,
+  .StepButton-d2-0-2-12.completed,
+  .StepButton-d4-0-2-20.completed {
+    background-color: $gold !important;
+}

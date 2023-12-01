@@ -1,5 +1,4 @@
 const productReducer = (state, action) => {
-	console.log(action);
 	switch (action.type) {
 		case "GET_COMBINATION_ID":
 			return {

@@ -36,13 +36,32 @@ export const OrderProvider = ({children}) => {
         }
     };
 
+    const getOrders = async() => {
+        const token = JSON.parse(localStorage.getItem('token'));
+        try {
+            const res = await axios.get(API_URL, {
+                headers: {
+                    Authorization: token
+                }
+            });
+            const action = {
+                type: 'GET_ORDERS',
+                payload: res.data
+            };
+            return dispatch(action);
+        } catch (error) {
+            console.error(error);
+        }
+    };
+
     return (
         <OrderContext.Provider
             value={{
             CombinationId: state.CombinationId,
             order: state.order,
             orders: state.orders,
-            createOrder
+            createOrder,
+            getOrders
         }}>
             {children}
         </OrderContext.Provider>

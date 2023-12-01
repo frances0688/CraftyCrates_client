@@ -5,6 +5,11 @@ const orderReducer = (state, action) => {
 				...state,
 				order: action.payload,
 			};
+		case "GET_ORDERS":
+			return {
+				...state,
+				orders: action.payload,
+			};
 		default:
 			return state;
 	}

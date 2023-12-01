@@ -7,6 +7,7 @@ import {
     MDBRipple,
     MDBCardBody,
     MDBCardTitle,
+    MDBCardSubTitle,
     MDBCardImage,
     MDBCardText
 } from 'mdb-react-ui-kit';
@@ -19,7 +20,7 @@ const Box = () => {
 
     const onClick = (boxId) => {
         localStorage.setItem('selectedBoxId', boxId);
-        console.log(`Theme ${boxId} selected!`);
+        console.log(`Box ${boxId} selected!`);
     };
 
     return (
@@ -30,7 +31,8 @@ const Box = () => {
                         <MDBCard key={box.id} onClick={() => onClick(box.id)}>
                             <MDBCardBody>
                                 <MDBCardTitle>{box.size}</MDBCardTitle>
-                                <MDBRipple
+                                <MDBCardSubTitle>{box.price}</MDBCardSubTitle>
+                                {/* <MDBRipple
                                     rippleColor='light'
                                     rippleTag='div'
                                     className='bg-image hover-overlay'>
@@ -42,7 +44,7 @@ const Box = () => {
                                             backgroundColor: 'rgba(251, 251, 251, 0.15)'
                                         }}></div>
                                     </a>
-                                </MDBRipple>
+                                </MDBRipple> */}
                                 <MDBCardText>{box.description}</MDBCardText>
                             </MDBCardBody>
                         </MDBCard>

@@ -1,8 +1,9 @@
 import {MDBContainer, MDBBtn, MDBCol, MDBRow} from 'mdb-react-ui-kit';
 import {useNavigate} from 'react-router-dom';
-import {StepContext} from '../../context/StepContext/StepState';
+import {StepContext} from '../../../context/StepContext/StepState';
 import {useContext} from 'react';
-import {OrderContext} from '../../context/OrderContext/OrderState';
+import {OrderContext} from '../../../context/OrderContext/OrderState';
+import './StepButtons.scss';
 
 function StepButtons(props) {
     const {currentStep, previousStep, nextStep} = useContext(StepContext);
@@ -20,14 +21,13 @@ function StepButtons(props) {
         if (currentStep === props.totalSteps && isAuthenticated) {
             const order = createOrder(CombinationId);
             if (order) {
-                console.log('Order created!', order);
+                console.log('Order created!');
                 localStorage.removeItem("selectedThemeId");
                 localStorage.removeItem("selectedBoxId");
                 localStorage.removeItem("CombinationId");
                 navigate('/profile')
             }
         } else if (currentStep === props.totalSteps && !isAuthenticated) {
-            console.log("login");
             navigate('/login');
         } else {
             nextStep();

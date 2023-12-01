@@ -5,7 +5,7 @@ import {Stepper, Step} from 'react-form-stepper';
 import Theme from './Theme/Theme';
 import Box from './Box/Box';
 import Product from './Product/Product';
-import StepButtons from './StepButtons';
+import StepButtons from './StepButtons/StepButtons';
 import {StepContext} from '../../context/StepContext/StepState';
 import './OrderStepper.scss'
 

@@ -29,7 +29,7 @@ const Theme = () => {
                         <MDBCard key={theme.id} onClick={() => onClick(theme.id)}>
                             <MDBCardBody>
                                 <MDBCardTitle>{theme.theme_name}</MDBCardTitle>
-                                <MDBRipple
+                                {/* <MDBRipple
                                     rippleColor='light'
                                     rippleTag='div'
                                     className='bg-image hover-overlay'>
@@ -41,7 +41,7 @@ const Theme = () => {
                                             backgroundColor: 'rgba(251, 251, 251, 0.15)'
                                         }}></div>
                                     </a>
-                                </MDBRipple>
+                                </MDBRipple> */}
                             </MDBCardBody>
                         </MDBCard>
                     ))}

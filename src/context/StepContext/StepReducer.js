@@ -1,5 +1,4 @@
 const stepReducer = (state, action) => {
-	console.log("step", state, action.type);
 	switch (action.type) {
 		case "NEXT_STEP":
 			return {
